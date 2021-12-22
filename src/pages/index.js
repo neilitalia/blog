@@ -2,11 +2,24 @@ import React from "react"
 import { graphql } from "gatsby"
 
 export const query = graphql`
-  query HomePageQuery {
+  query SITE_INDEX_QUERY {
     site {
       siteMetadata {
         title
         description
+      }
+    }
+    allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { published: { eq: true } } }
+    ) {
+      nodes {
+        id
+        excerpt(pruneLength: 250)
+        frontmatter {
+          title
+          date
+        }
       }
     }
   }
@@ -15,8 +28,20 @@ export const query = graphql`
 const Home = ({ data }) => {
   return (
     <div>
-      <h1>{data.site.siteMetadata.title}</h1>
-      <p>{data.site.siteMetadata.description}</p>
+      <div>
+        <h1>{data.site.siteMetadata.title}</h1>
+        <p>{data.site.siteMetadata.description}</p>
+      </div>
+
+      <div>
+        {data.allMdx.nodes.map(({ excerpt, frontmatter }) => (
+          <>
+            <h1>{frontmatter.title}</h1>
+            <p>{frontmatter.date}</p>
+            <p>{excerpt}</p>
+          </>
+        ))}
+      </div>
     </div>
   )
 }
