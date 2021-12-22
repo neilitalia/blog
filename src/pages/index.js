@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 export const query = graphql`
   query SITE_INDEX_QUERY {
@@ -20,6 +20,9 @@ export const query = graphql`
           title
           date
         }
+        fields {
+          slug
+        }
       }
     }
   }
@@ -34,12 +37,14 @@ const Home = ({ data }) => {
       </div>
 
       <div>
-        {data.allMdx.nodes.map(({ excerpt, frontmatter }) => (
-          <>
-            <h1>{frontmatter.title}</h1>
+        {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }) => (
+          <div>
+            <Link to={fields.slug}>
+              <h1>{frontmatter.title}</h1>
+            </Link>
             <p>{frontmatter.date}</p>
             <p>{excerpt}</p>
-          </>
+          </div>
         ))}
       </div>
     </div>
