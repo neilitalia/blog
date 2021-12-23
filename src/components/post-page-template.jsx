@@ -14,7 +14,7 @@ export const query = graphql`
   }
 `
 
-const Page = ({ data }) => {
+const PostPage = ({ data }) => {
   const { frontmatter, body } = data.mdx
   return (
     <div>
@@ -25,4 +25,4 @@ const Page = ({ data }) => {
   )
 }
 
-export default Page
+export default PostPage
