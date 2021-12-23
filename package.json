@@ -11,7 +11,8 @@
     "start": "gatsby develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "tailwind-watch": "npx tailwindcss -i ./src/styles/tailwind.css -o ./src/styles/index.css --watch"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
