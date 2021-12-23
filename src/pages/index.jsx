@@ -31,11 +31,11 @@ export const query = graphql`
 
 const Home = ({ data }) => {
   return (
-    <div>
-      <div>
-        <h1 class="text-3xl font-bold underline">{data.site.siteMetadata.title}</h1>
+    <div className="flex flex-col">
+      <header className="flex flex-col justify-center items-center">
+        <h1 className="text-3xl font-bold underline text-red-600">{data.site.siteMetadata.title}</h1>
         <p>{data.site.siteMetadata.description}</p>
-      </div>
+      </header>
 
       <div>
         {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }) => (

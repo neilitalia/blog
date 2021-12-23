@@ -15,6 +15,7 @@
     "tailwind-watch": "npx tailwindcss -i ./src/styles/tailwind.css -o ./src/styles/index.css --watch"
   },
   "dependencies": {
+    "@fontsource/jost": "^4.5.1",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "autoprefixer": "^10.4.0",
