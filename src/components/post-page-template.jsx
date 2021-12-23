@@ -8,7 +8,7 @@ export const query = graphql`
       body
       frontmatter {
         title
-        date(formatString: "YYYY MMMM Do")
+        date(formatString: "dddd, MMMM DD, YYYY", locale: "en-US")
       }
     }
   }
