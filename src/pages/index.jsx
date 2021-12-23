@@ -1,5 +1,6 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import "../styles/index.css"
 
 export const query = graphql`
   query SITE_INDEX_QUERY {
@@ -32,7 +33,7 @@ const Home = ({ data }) => {
   return (
     <div>
       <div>
-        <h1>{data.site.siteMetadata.title}</h1>
+        <h1 class="text-3xl font-bold underline">{data.site.siteMetadata.title}</h1>
         <p>{data.site.siteMetadata.description}</p>
       </div>
 

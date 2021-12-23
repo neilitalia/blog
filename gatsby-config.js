@@ -4,6 +4,7 @@ module.exports = {
     description: `This is my coding blog where I write about my coding journey.`,
   },
   plugins: [
+    `gatsby-plugin-postcss`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
