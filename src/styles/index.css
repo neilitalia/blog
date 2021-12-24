@@ -440,6 +440,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: flex;
 }
 
+.min-h-screen {
+  min-height: 100vh;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -450,6 +454,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .justify-center {
   justify-content: center;
+}
+
+.bg-red-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 38 38 / var(--tw-bg-opacity));
+}
+
+.bg-darkTeal {
+  --tw-bg-opacity: 1;
+  background-color: rgb(5 39 45 / var(--tw-bg-opacity));
 }
 
 .text-3xl {
@@ -464,6 +478,21 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-red-600 {
   --tw-text-opacity: 1;
   color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+
+.text-orange-100 {
+  --tw-text-opacity: 1;
+  color: rgb(255 237 213 / var(--tw-text-opacity));
+}
+
+.text-amber-100 {
+  --tw-text-opacity: 1;
+  color: rgb(254 243 199 / var(--tw-text-opacity));
+}
+
+.text-amber-400 {
+  --tw-text-opacity: 1;
+  color: rgb(251 191 36 / var(--tw-text-opacity));
 }
 
 .underline {

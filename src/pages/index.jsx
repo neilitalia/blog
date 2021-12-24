@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import "../styles/index.css"
 
 export const query = graphql`
   query SITE_INDEX_QUERY {
@@ -19,7 +18,7 @@ export const query = graphql`
         excerpt(pruneLength: 250)
         frontmatter {
           title
-          date
+          date(formatString: "dddd, MMMM DD, YYYY", locale: "en-US")
         }
         fields {
           slug
@@ -31,23 +30,23 @@ export const query = graphql`
 
 const Home = ({ data }) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col bg-darkTeal text-amber-100 min-h-screen">
       <header className="flex flex-col justify-center items-center">
-        <h1 className="text-3xl font-bold underline text-red-600">{data.site.siteMetadata.title}</h1>
+        <h1 className="text-3xl font-bold underline text-amber-400">{data.site.siteMetadata.title}</h1>
         <p>{data.site.siteMetadata.description}</p>
       </header>
 
-      <div>
+      <main>
         {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }) => (
           <div>
             <Link to={fields.slug}>
-              <h1>{frontmatter.title}</h1>
+              <h2 className="text-3xl font-bold underline text-amber-400">{frontmatter.title}</h2>
             </Link>
             <p>{frontmatter.date}</p>
             <p>{excerpt}</p>
           </div>
         ))}
-      </div>
+      </main>
     </div>
   )
 }
