@@ -15,6 +15,7 @@ export const query = graphql`
 `
 
 const PostPage = ({ data }) => {
+  console.log(data)
   const { frontmatter, body } = data.mdx
   return (
     <div>
