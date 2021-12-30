@@ -1,11 +1,13 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import { PageProps } from "../types"
 import PostPreviewCard from "../components/PostPreviewCard"
+import NavBar from "../components/NavBar"
 
 const Home: React.FC<PageProps> = ({ data }) => {
   return (
     <div className="flex flex-col bg-darkTeal text-amber-100 min-h-screen">
+      <NavBar />
       <header className="flex flex-col justify-center items-center">
         <h1 className="text-3xl font-bold underline text-amber-400">{data.site.siteMetadata.title}</h1>
         <p>{data.site.siteMetadata.description}</p>
