@@ -10,8 +10,8 @@ const Home: React.FC<Props> = ({ data }) => {
       </header>
 
       <main>
-        {data?.allMdx.nodes.map(({ excerpt, frontmatter, fields }) => (
-          <div>
+        {data.allMdx.nodes.map(({ excerpt, frontmatter, fields, id }) => (
+          <div key={id}>
             <Link to={fields.slug}>
               <h2 className="text-3xl font-bold underline text-amber-400">{frontmatter.title}</h2>
             </Link>
@@ -63,6 +63,7 @@ interface Props {
     },
     allMdx: {
       nodes: [{
+        id: string,
         excerpt: string,
         frontmatter: {
           date: string

@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const PostPage: React.FC<Props> = ({ data }) => {
-  console.log(data)
   const { frontmatter, body } = data.mdx
   return (
     <div>
