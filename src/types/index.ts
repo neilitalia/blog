@@ -18,7 +18,8 @@ export interface PageProps {
           slug: string,
           readingTime: {
             text: string
-          }
+          },
+          tags: string[]
         }
       }]
     },
@@ -38,6 +39,7 @@ export interface PostPreviewCardProps {
   frontmatter: {
     date: Date
     title: string
+    tags?: string[]
   },
   fields: {
     slug: string,

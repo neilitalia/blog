@@ -9,10 +9,16 @@ const PostPreviewCard: React.FC<PostPreviewCardProps> = ({ excerpt, frontmatter,
         <h2 className="text-3xl font-bold underline text-amber-400">{frontmatter.title}</h2>
       </Link>
       <p className="font-serif">{excerpt}</p>
-      <div className="flex flex-row justify-between w-48">
+      <div className="flex flex-row">
         <p className="font-serif">{fields.readingTime.text}</p>
-        <p>&#9702;</p>
+        <p className="mx-5">&#9702;</p>
         <p className="font-serif">{frontmatter.date}</p>
+        {frontmatter.tags && <p className="mx-5">&#9702;</p>}
+        <div className="flex flex-row">
+          {frontmatter.tags && frontmatter.tags.map((tag, i)=>(
+              <p key={i} className="font-serif mr-3">#{tag}</p>
+          ))}
+        </div>
       </div>
     </div>
   )
