@@ -6,11 +6,12 @@ import NavBar from "../components/NavBar"
 
 const Home: React.FC<PageProps> = ({ data }) => {
   return (
-    <div className="flex flex-col bg-darkTeal text-amber-100 min-h-screen">
+    <div className="flex flex-col text-amber-100 min-h-screen bg-gradient-to-b from-darkestBlue to-darkTeal">
       <NavBar />
-      <header className="flex flex-col justify-center items-center">
+
+      <header className="flex flex-col justify-center items-center my-20">
         <h1 className="text-3xl font-bold underline text-amber-400">{data.site.siteMetadata.title}</h1>
-        <p>{data.site.siteMetadata.description}</p>
+        <p className="font-serif">{data.site.siteMetadata.description}</p>
       </header>
 
       <main className="flex flex-col justify-center items-center">
