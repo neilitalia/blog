@@ -6,7 +6,7 @@
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "(trap 'kill 0' INT EXIT; npx tailwindcss -i ./src/styles/tailwind.css -o ./src/styles/index.css --watch & gatsby develop)",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "gatsby develop",
     "serve": "gatsby serve",

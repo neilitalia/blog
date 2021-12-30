@@ -1,3 +1,11 @@
 module.exports = () => ({
   plugins: [require("tailwindcss")],
 })
+
+// module.exports = {
+//   plugins: {
+//     tailwindcss: {},
+//     autoprefixer: {},
+//     ...(NODE_ENV === "production" ? { cssnano: {} } : {}),
+//   },
+// }
