@@ -1,6 +1,12 @@
 const colors = require("tailwindcss/colors")
 const defaultTheme = require("tailwindcss/defaultTheme")
 
+delete colors["lightBlue"]
+delete colors["trueGray"]
+delete colors["coolGray"]
+delete colors["blueGray"]
+delete colors["warmGray"]
+
 const extendedColors = {
   ...colors,
   ...{
@@ -10,9 +16,7 @@ const extendedColors = {
 }
 
 module.exports = {
-  purge: {
-    content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
-  },
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
   theme: {
     extend: {
       colors: extendedColors,
