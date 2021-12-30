@@ -9,9 +9,9 @@ const Home: React.FC<Props> = ({ data }) => {
         <p>{data.site.siteMetadata.description}</p>
       </header>
 
-      <main>
+      <main className="flex flex-col justify-center items-center">
         {data.allMdx.nodes.map(({ excerpt, frontmatter, fields, id }) => (
-          <div key={id}>
+          <div key={id} className="max-w-xs">
             <Link to={fields.slug}>
               <h2 className="text-3xl font-bold underline text-amber-400">{frontmatter.title}</h2>
             </Link>
