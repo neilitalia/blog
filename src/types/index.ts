@@ -29,3 +29,14 @@ export interface PageProps {
   }
 }
 
+export interface PostPreviewCardProps {
+  id: string,
+  excerpt: string,
+  frontmatter: {
+    date: Date
+    title: string
+  },
+  fields: {
+    slug: string
+  }
+}

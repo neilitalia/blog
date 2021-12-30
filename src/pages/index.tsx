@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
 import { PageProps } from "../types"
+import PostPreviewCard from "../components/PostPreviewCard"
 
 const Home: React.FC<PageProps> = ({ data }) => {
-  console.log(data)
   return (
     <div className="flex flex-col bg-darkTeal text-amber-100 min-h-screen">
       <header className="flex flex-col justify-center items-center">
@@ -13,13 +13,7 @@ const Home: React.FC<PageProps> = ({ data }) => {
 
       <main className="flex flex-col justify-center items-center">
         {data.allMdx.nodes.map(({ excerpt, frontmatter, fields, id }) => (
-          <div key={id} className="max-w-xs">
-            <Link to={fields.slug}>
-              <h2 className="text-3xl font-bold underline text-amber-400">{frontmatter.title}</h2>
-            </Link>
-            <p>{frontmatter.date}</p>
-            <p>{excerpt}</p>
-          </div>
+          <PostPreviewCard excerpt={excerpt} frontmatter={frontmatter} fields={fields} id={id}/>
         ))}
       </main>
     </div>
