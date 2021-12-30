@@ -1,7 +1,8 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
+import { PageProps } from "../types"
 
-const Home: React.FC<Props> = ({ data }) => {
+const Home: React.FC<PageProps> = ({ data }) => {
   return (
     <div className="flex flex-col bg-darkTeal text-amber-100 min-h-screen">
       <header className="flex flex-col justify-center items-center">
@@ -52,28 +53,3 @@ export const query = graphql`
     }
   }
 `
-
-interface Props {
-  data: {
-    site: {
-      siteMetadata: {
-        title: string
-        description: string
-      }
-    },
-    allMdx: {
-      nodes: [{
-        id: string,
-        excerpt: string,
-        frontmatter: {
-          date: string
-          title: string
-        },
-        fields: {
-          slug: string
-        }
-      }]
-    }
-  }
-}
-

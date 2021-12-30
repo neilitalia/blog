@@ -1,8 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
+import { PageProps } from "../types"
 
-const PostPage: React.FC<Props> = ({ data }) => {
+const PostPage: React.FC<PageProps> = ({ data }) => {
   const { frontmatter, body } = data.mdx
   return (
     <div>
@@ -26,34 +27,3 @@ export const query = graphql`
     }
   }
 `
-
-interface Props {
-  data: {
-    site: {
-      siteMetadata: {
-        title: string
-        description: string
-      }
-    },
-    allMdx: {
-      nodes: [{
-        excerpt: string,
-        frontmatter: {
-          date: string
-          title: string
-        },
-        fields: {
-          slug: string
-        }
-      }]
-    },
-    mdx: {
-      body: string,
-      frontmatter: {
-        title: string,
-        date: string
-      }
-    }
-  }
-}
-
