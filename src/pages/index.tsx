@@ -42,10 +42,13 @@ export const query = graphql`
         excerpt(pruneLength: 250)
         frontmatter {
           title
-          date(formatString: "dddd, MMMM DD, YYYY", locale: "en-US")
+          date(formatString: "MMM DD, YYYY", locale: "en-US")
         }
         fields {
           slug
+          readingTime {
+            text
+          }  
         }
       }
     }

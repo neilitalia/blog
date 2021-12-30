@@ -15,7 +15,10 @@ export interface PageProps {
           title: string
         },
         fields: {
-          slug: string
+          slug: string,
+          readingTime: {
+            text: string
+          }
         }
       }]
     },
@@ -37,6 +40,9 @@ export interface PostPreviewCardProps {
     title: string
   },
   fields: {
-    slug: string
+    slug: string,
+    readingTime: {
+      text: string
+    }
   }
 }
