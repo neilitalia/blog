@@ -11,7 +11,7 @@ export interface PageProps {
         id: string,
         excerpt: string,
         frontmatter: {
-          date: string
+          date: Date
           title: string
         },
         fields: {
@@ -23,7 +23,7 @@ export interface PageProps {
       body: string,
       frontmatter: {
         title: string,
-        date: string
+        date: Date
       }
     }
   }

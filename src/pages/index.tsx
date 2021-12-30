@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 import { PageProps } from "../types"
 
 const Home: React.FC<PageProps> = ({ data }) => {
+  console.log(data)
   return (
     <div className="flex flex-col bg-darkTeal text-amber-100 min-h-screen">
       <header className="flex flex-col justify-center items-center">
