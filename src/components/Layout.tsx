@@ -7,7 +7,7 @@ const Layout: React.FC = ({ children }) => {
     <div className="flex flex-col text-amber-100 min-h-screen bg-gradient-to-b from-darkestBlue to-darkTeal">
       <NavBar />
       <Header/>
-      <main>
+      <main className='w-3/4'>
         {children}
       </main>
     </div>
