@@ -33,6 +33,17 @@ export interface HomePageProps {
   }
 }
 
+export interface HeaderProps {
+  data: {
+    site: {
+      siteMetadata: {
+        title: string
+        description: string
+      }
+    }
+  }
+}
+
 export interface PostPreviewCardProps {
   id: string,
   excerpt: string,
