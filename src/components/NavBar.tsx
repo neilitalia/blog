@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 const NavBar: React.FC = () => {
   return (
-    <div className="flex flex-row justify-between items-center bg-darkestBlue">
+    <div className="flex flex-row justify-between items-center">
       <h3 className="p-4">blog.neilitalia.dev</h3>
       <div>
         <Link to="/" className="p-4">Blog</Link>
