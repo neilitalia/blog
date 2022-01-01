@@ -7,7 +7,7 @@ import Layout from "../components/Layout"
 const Home: React.FC<HomePageProps> = ({ data }) => {
   return (
     <Layout>
-      <div className="flex flex-col justify-center items-center">
+      <div className="flex flex-col">
         {data.allMdx.nodes.map(({ excerpt, frontmatter, fields, id }) => (
           <PostPreviewCard excerpt={excerpt} frontmatter={frontmatter} fields={fields} id={id}/>
         ))}
