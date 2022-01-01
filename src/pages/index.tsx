@@ -1,12 +1,12 @@
 import React from "react"
 import { graphql } from "gatsby"
-import { PageProps } from "../types"
-import PostPreviewCard from "../components/PostPreviewCard"
+import { HomePageProps } from "../types"
 import NavBar from "../components/NavBar"
+import PostPreviewCard from "../components/PostPreviewCard"
 
-const Home: React.FC<PageProps> = ({ data }) => {
+const Home: React.FC<HomePageProps> = ({ data }) => {
   return (
-    <div className="flex flex-col text-amber-100 min-h-screen bg-gradient-to-b from-darkestBlue to-darkTeal">
+    <div>
       <NavBar />
 
       <header className="flex flex-col justify-center items-center my-20">
@@ -14,11 +14,11 @@ const Home: React.FC<PageProps> = ({ data }) => {
         <p className="font-serif">{data.site.siteMetadata.description}</p>
       </header>
 
-      <main className="flex flex-col justify-center items-center">
+      <div className="flex flex-col justify-center items-center">
         {data.allMdx.nodes.map(({ excerpt, frontmatter, fields, id }) => (
           <PostPreviewCard excerpt={excerpt} frontmatter={frontmatter} fields={fields} id={id}/>
         ))}
-      </main>
+      </div>
     </div>
   )
 }

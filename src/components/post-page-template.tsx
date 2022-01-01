@@ -1,9 +1,9 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { PageProps } from "../types"
+import { HomePageProps } from "../types"
 
-const PostPage: React.FC<PageProps> = ({ data }) => {
+const PostPage: React.FC<HomePageProps> = ({ data }) => {
   const { frontmatter, body } = data.mdx
   return (
     <div>

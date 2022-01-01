@@ -1,4 +1,4 @@
-export interface PageProps {
+export interface HomePageProps {
   data: {
     site: {
       siteMetadata: {
