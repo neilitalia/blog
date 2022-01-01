@@ -4,9 +4,9 @@ import Header from './Header'
 
 const Layout: React.FC = ({ children }) => {
   return (
-    <div className="flex flex-col text-amber-100 min-h-screen bg-gradient-to-b from-darkestBlue to-darkTeal">
+    <div className="flex flex-col items-center text-amber-100 min-h-screen bg-gradient-to-b from-darkestBlue to-darkTeal">
       <NavBar />
-      <Header/>
+      <Header />
       <main className='w-3/4'>
         {children}
       </main>
