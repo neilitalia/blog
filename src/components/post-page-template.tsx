@@ -2,15 +2,16 @@ import React from "react"
 import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { HomePageProps } from "../types"
+import Layout from "./Layout"
 
 const PostPage: React.FC<HomePageProps> = ({ data }) => {
   const { frontmatter, body } = data.mdx
   return (
-    <div>
+    <Layout>
       <h1>{frontmatter.title}</h1>
       <p>{frontmatter.date}</p>
       <MDXRenderer>{body}</MDXRenderer>
-    </div>
+    </Layout>
   )
 }
 

@@ -1,13 +1,14 @@
 import React from "react"
 import { useSiteMetadata } from "../hooks/use-site-metadata"
+import Layout from "../components/Layout"
 
 const About = () => {
   const { title, description } = useSiteMetadata()
   return (
-    <div>
+    <Layout>
       <h1>Welcome to {title}</h1>
       <p>About: {description}</p>
-    </div>
+    </Layout>
   )
 }
 

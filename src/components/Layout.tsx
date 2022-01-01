@@ -3,7 +3,6 @@ import NavBar from './NavBar'
 import Header from './Header'
 
 const Layout: React.FC = ({ children }) => {
-  console.log(children)
   return (
     <div className="flex flex-col text-amber-100 min-h-screen bg-gradient-to-b from-darkestBlue to-darkTeal">
       <NavBar />
