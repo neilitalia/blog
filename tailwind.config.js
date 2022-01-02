@@ -16,7 +16,7 @@ const extendedColors = {
 }
 
 module.exports = {
-  content: ["./src/**/*.{html,js,jsx,ts,tsx}"],
+  content: ["./src/**/*.{html,js,jsx,ts,tsx}", "./src/posts/**/**/*.{md,mdx}"],
   theme: {
     extend: {
       colors: extendedColors,
@@ -40,7 +40,28 @@ module.exports = {
       fontFamily: {
         sans: ["Jost", ...defaultTheme.fontFamily.sans],
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            h5: {
+              color: "#fef3c7",
+            },
+            h6: {
+              color: "#fef3c7",
+            },
+            strong: {
+              color: "#fef3c7",
+            },
+            li: {
+              color: "#fef3c7",
+            },
+            td: {
+              color: "#fef3c7",
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 }
