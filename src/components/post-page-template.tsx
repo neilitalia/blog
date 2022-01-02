@@ -8,7 +8,7 @@ const PostPage: React.FC<HomePageProps> = ({ data }) => {
   const { frontmatter, body } = data.mdx
   return (
     <Layout>
-      <article className="prose prose-invert prose-amber prose-headings:text-amber-100 prose-p:text-amber-100 prose-p:font-serif">
+      <article className="prose prose-invert prose-amber prose-headings:text-amber-100 prose-p:text-amber-100 prose-p:font-serif prose-a:text-amber-400 hover:prose-a:text-amber-600">
         <h1>{frontmatter.title}</h1>
         <p>{frontmatter.date}</p>
         <MDXRenderer>

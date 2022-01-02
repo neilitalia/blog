@@ -27,11 +27,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             fields {
               slug
             }
+            frontmatter {
+              slug
+            }
           }
         }
       }
     }
   `)
+
+  console.log("result:>", result.data.allMdx)
 
   if (result.errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
@@ -41,8 +46,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const posts = result.data.allMdx.edges
 
   posts.forEach(({ node }, index) => {
+    console.log("node:>", node)
     createPage({
-      path: node.fields.slug,
+      path: node.frontmatter.slug ? node.frontmatter.slug : node.fields.slug,
       component: path.resolve(`./src/components/post-page-template.tsx`),
       context: { id: node.id },
     })

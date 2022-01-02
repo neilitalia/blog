@@ -37,6 +37,7 @@ export const query = graphql`
           title
           date(formatString: "MMM DD, YYYY", locale: "en-US")
           tags
+          slug
         }
         fields {
           slug

@@ -51,6 +51,7 @@ export interface PostPreviewCardProps {
     date: Date
     title: string
     tags?: string[]
+    slug?: string
   },
   fields: {
     slug: string,
