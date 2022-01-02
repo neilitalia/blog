@@ -46,7 +46,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const posts = result.data.allMdx.edges
 
   posts.forEach(({ node }, index) => {
-    console.log("node:>", node)
     createPage({
       path: node.frontmatter.slug ? node.frontmatter.slug : node.fields.slug,
       component: path.resolve(`./src/components/post-page-template.tsx`),
