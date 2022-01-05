@@ -15,11 +15,6 @@ const PostPreviewCard: React.FC<PostPreviewCardProps> = ({ excerpt, frontmatter,
         <p className="mx-5">&#9702;</p>
         <p className="font-serif">{frontmatter.date}</p>
         {frontmatter.tags && <p className="mx-5 hidden md:flex">&#9702;</p>}
-        {/* <div className="hidden md:flex md:flex-row">
-          {frontmatter.tags && frontmatter.tags.map((tag, i)=>(
-              <p key={i} className="font-serif mr-2">#{tag}</p>
-          ))}
-        </div> */}
         {frontmatter.tags && <PostTags tags={frontmatter.tags}/>}
       </div>
     </div>

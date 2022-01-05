@@ -3,15 +3,21 @@ import { graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { PostPageTemplateProps } from "../types"
 import Layout from "./Layout"
+import PostTags from "./PostTags"
 
 const PostPage: React.FC<PostPageTemplateProps> = ({ data }) => {
   const { frontmatter, body, fields } = data.mdx
   return (
     <Layout>
       <article className="prose prose-invert prose-amber prose-headings:text-amber-400 prose-p:text-amber-100 prose-p:font-serif prose-a:text-amber-400 hover:prose-a:text-amber-600">
-        <h1>{frontmatter.title}</h1>
-        <p>Published {frontmatter.date}</p>
-        <p>{fields.readingTime.text}</p>
+        <h1 className="mb-0 text-6xl">{frontmatter.title}</h1>
+        <div className="flex flex-row">
+          <p>{frontmatter.date}</p>
+          <p className="mx-5">&#9702;</p>
+          <p>{fields.readingTime.text}</p>
+          {frontmatter.tags && <p className="mx-5 hidden md:flex">&#9702;</p>}
+          {frontmatter.tags && <PostTags tags={frontmatter.tags}/>}
+        </div>
         <MDXRenderer>
           {body}
         </MDXRenderer>
@@ -28,7 +34,7 @@ export const query = graphql`
       body
       frontmatter {
         title
-        date(formatString: "MMMM DD, YYYY", locale: "en-US")
+        date(formatString: "MMM DD, YYYY", locale: "en-US")
         tags
         cover
       }
