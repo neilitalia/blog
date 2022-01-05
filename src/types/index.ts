@@ -41,7 +41,8 @@ export interface PostPageTemplateProps {
         title: string,
         date: Date,
         tags?: string[],
-        cover?: string
+        cover?: string,
+        alt?: string
       },
       fields: {
         readingTime: {
