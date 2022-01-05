@@ -36,8 +36,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   `)
 
-  console.log("result:>", result.data.allMdx)
-
   if (result.errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
   }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from "gatsby"
 import { PostPreviewCardProps } from '../types'
+import PostTags from './PostTags'
 
 const PostPreviewCard: React.FC<PostPreviewCardProps> = ({ excerpt, frontmatter, fields, id }) => {
   return (
@@ -14,11 +15,12 @@ const PostPreviewCard: React.FC<PostPreviewCardProps> = ({ excerpt, frontmatter,
         <p className="mx-5">&#9702;</p>
         <p className="font-serif">{frontmatter.date}</p>
         {frontmatter.tags && <p className="mx-5 hidden md:flex">&#9702;</p>}
-        <div className="hidden md:flex md:flex-row">
+        {/* <div className="hidden md:flex md:flex-row">
           {frontmatter.tags && frontmatter.tags.map((tag, i)=>(
               <p key={i} className="font-serif mr-2">#{tag}</p>
           ))}
-        </div>
+        </div> */}
+        {frontmatter.tags && <PostTags tags={frontmatter.tags}/>}
       </div>
     </div>
   )

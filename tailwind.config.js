@@ -44,10 +44,10 @@ module.exports = {
         DEFAULT: {
           css: {
             h5: {
-              color: "#fef3c7",
+              color: "#fbbf24",
             },
             h6: {
-              color: "#fef3c7",
+              color: "#fbbf24",
             },
             strong: {
               color: "#fef3c7",

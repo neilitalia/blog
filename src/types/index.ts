@@ -33,6 +33,25 @@ export interface HomePageProps {
   }
 }
 
+export interface PostPageTemplateProps {
+  data: {
+    mdx: {
+      body: string,
+      frontmatter: {
+        title: string,
+        date: Date,
+        tags?: string[],
+        cover?: string
+      },
+      fields: {
+        readingTime: {
+          text: string
+        }
+      }
+    }
+  }
+}
+
 export interface HeaderProps {
   data: {
     site: {
@@ -59,4 +78,8 @@ export interface PostPreviewCardProps {
       text: string
     }
   }
+}
+
+export interface PostTagsProps {
+  tags: string[]
 }
