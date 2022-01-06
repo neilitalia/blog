@@ -35,7 +35,7 @@ export const query = graphql`
       body
       frontmatter {
         title
-        date(formatString: "MMM DD, YYYY", locale: "en-US")
+        date(formatString: "MMM D, YYYY", locale: "en-US")
         tags
         alt
         featuredImage {
