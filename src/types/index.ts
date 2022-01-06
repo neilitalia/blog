@@ -41,8 +41,14 @@ export interface PostPageTemplateProps {
         title: string,
         date: Date,
         tags?: string[],
-        cover?: string,
-        alt?: string
+        alt?: string,
+        featuredImage?: {
+          childImageSharp: {
+            fluid: {
+              src: string
+            }
+          }
+        }
       },
       fields: {
         readingTime: {
