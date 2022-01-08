@@ -16,7 +16,11 @@ const extendedColors = {
 }
 
 module.exports = {
-  content: ["./src/**/*.{html,js,jsx,ts,tsx}", "./src/posts/**/**/*.{md,mdx}"],
+  content: [
+    "./src/**/*.{html,js,jsx,ts,tsx}",
+    "./src/posts/**/**/*.{md,mdx}",
+    "./src/posts/*.{md,mdx}",
+  ],
   theme: {
     extend: {
       colors: extendedColors,
